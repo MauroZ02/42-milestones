@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 19:37:11 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/09/20 15:49:33 by mzangaro         ###   ########.fr       */
+/*   Created: 2024/09/27 17:51:58 by mzangaro          #+#    #+#             */
+/*   Updated: 2024/09/27 17:56:34 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-size_t	ft_strlen(const char *s)
+int	ft_tolower(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
+	if (c >= 65 && c <= 90)
 	{
-		i++;
+		c = c + 32;
 	}
-	return (i);
+	return (c);
 }
 
-/*int main ()
+/*int main (void)
 {
-	char s[] = "Messi G.O.A.T";
-	printf("%zu", ft_strlen(s));
+	int	c;
+	char	cast_c;
+
+	c = ft_tolower('G'); // Store the result of ft_tolower in c
+	
+	cast_c = (char)c; // Cast c (int) to char so we can pass it to write
+	
+	write(1, &cast_c, 1);
+	return(0);
 }*/

@@ -1,31 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 19:37:11 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/09/20 15:49:33 by mzangaro         ###   ########.fr       */
+/*   Created: 2024/09/27 17:59:18 by mzangaro          #+#    #+#             */
+/*   Updated: 2024/09/27 19:46:12 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-size_t	ft_strlen(const char *s)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
+	if (c == '\0')
+	{
+		while (s[i] != '\0')
+		{
+			i++;
+		}
+		return ((char *)&s[i]);
+	}
 	while (s[i] != '\0')
 	{
+		if (s[i] == c)
+		{
+			return ((char *)&s[i]);
+		}
 		i++;
 	}
-	return (i);
+	return ((char *)NULL);
 }
 
-/*int main ()
+int main(void)
 {
-	char s[] = "Messi G.O.A.T";
-	printf("%zu", ft_strlen(s));
-}*/
+	const char s[20] = "Hola Mundo";
+	char c;
+	c = 'o';
+	char *result;
+	
+	result = ft_strchr(s, c);
+	
+	write(1, result, 1);
+	write(1, "\n", 1);
+	return 0;
+}
