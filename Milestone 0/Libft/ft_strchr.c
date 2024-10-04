@@ -6,7 +6,7 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:59:18 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/10/02 17:13:05 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/10/02 18:24:24 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strchr(const char *s, int c)
 		}
 		i++;
 	}
-	return ((char *)NULL);
+	return (NULL);
 }
 
 /*int main(void)

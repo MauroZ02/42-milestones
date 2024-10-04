@@ -6,7 +6,7 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:18:07 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/10/02 17:13:23 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/10/02 18:28:14 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	char	*cast_s1;
-	char	*cast_s2;
+	unsigned char	*cast_s1;
+	unsigned char	*cast_s2;
+	size_t			i;
 
 	cast_s1 = (unsigned char *)s1;
 	cast_s2 = (unsigned char *)s2;
@@ -31,3 +31,21 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+
+/*int main (void)
+{
+	char s1[30] = "Hola Mundo";
+	char s2[30] = "Hola a todos";
+	int result;
+
+	result = ft_memcmp(s1, s2, 8);
+	if (result == 0)
+	{
+		write(1, "Equal\n", 6);
+	}
+	else 
+	{
+		write(1, "Not Equal\n", 10);
+	}
+	return 0;
+}*/

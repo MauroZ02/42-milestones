@@ -1,46 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 13:49:32 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/10/04 14:13:40 by mzangaro         ###   ########.fr       */
+/*   Created: 2024/10/02 18:34:38 by mzangaro          #+#    #+#             */
+/*   Updated: 2024/10/04 13:07:31 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	if (little[0] == '\0')
 	{
-		if (s1[i] != s2[i])
+		return (big);
+	}
+	while ((big[i] != '\0') && i < len)
+	{
+		j = 0;
+		while (big[i + j] == little[j] && (i + j) < len)
 		{
-			return (s1[i] - s2[i]);
+			if (little[j + 1] == '\0')
+				return (&big[i]);
+			j++;
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
-
-/*int main(void)
-{
-	char s1[30] = "Hola Mrobando";
-	char s2[30] = "Hola Pessi";
-	int	result;
-
-	result = ft_strncmp(s1, s2, 6);
-	if (result == 0)
-		write(1, "Equal\n", 6);
-	if (result > 0)
-		write(1, "s1 > s2\n", 8);
-	if (result < 0)
-		write(1, "s1 < s2\n", 8);
-
-	return (0);
-}*/
