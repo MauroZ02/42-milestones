@@ -6,9 +6,11 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 19:34:18 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/09/18 19:36:09 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/10/07 16:47:53 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

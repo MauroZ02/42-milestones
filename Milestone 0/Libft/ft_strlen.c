@@ -6,11 +6,11 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 19:37:11 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/09/20 15:49:33 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/10/07 16:47:16 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

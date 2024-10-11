@@ -6,11 +6,11 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:51:58 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/09/27 17:56:34 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/10/07 16:46:58 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

@@ -6,11 +6,11 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:59:18 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/10/02 18:24:24 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/10/07 16:47:27 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

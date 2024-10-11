@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 18:26:13 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/10/07 16:48:00 by mzangaro         ###   ########.fr       */
+/*   Created: 2024/10/11 14:32:34 by mzangaro          #+#    #+#             */
+/*   Updated: 2024/10/11 15:11:36 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (c >= '0' && c <= '9')
+	int	i;
+
+	i = 0;
+	while (s[i])
 	{
-		return (0);
+		write (fd, &s[i], 1);
+		i++;
 	}
-	return (1);
 }
 
-/*#include <stdio.h>
-int main(void)
-{
-	printf("%d", ft_isdigit('d'));
-}*/
+// int main()
+// {
+// 	ft_putstr_fd("Hola mundo", 1);
+// }

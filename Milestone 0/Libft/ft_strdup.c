@@ -1,28 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 18:26:13 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/10/07 16:48:00 by mzangaro         ###   ########.fr       */
+/*   Created: 2024/10/07 16:57:08 by mzangaro          #+#    #+#             */
+/*   Updated: 2024/10/11 16:43:36 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+char	*ft_strdup(const char *s)
 {
-	if (c >= '0' && c <= '9')
+	char	*result;
+	size_t	size;
+	size_t	i;
+
+	if (s == 0)
+		return (NULL);
+	size = ft_strlen(s);
+	result = ft_calloc(size + 1, sizeof(char));
+	if (result == 0)
+		return (NULL);
+	i = 0;
+	while (i < size)
 	{
-		return (0);
+		result[i] = s[i];
+		i++;
 	}
-	return (1);
+	return (result);
 }
 
-/*#include <stdio.h>
-int main(void)
+/*int main(void)
 {
-	printf("%d", ft_isdigit('d'));
-}*/
+	char *string = ft_strdup("Hola");
+	printf("%s\n", string);
+	free(string);
+	return 0;
+}
+*/

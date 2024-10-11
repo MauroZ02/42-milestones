@@ -6,11 +6,11 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 22:06:07 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/09/26 15:36:12 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/10/07 16:47:21 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {

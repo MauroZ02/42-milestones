@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 18:26:13 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/10/07 16:48:00 by mzangaro         ###   ########.fr       */
+/*   Created: 2024/10/07 18:54:58 by mzangaro          #+#    #+#             */
+/*   Updated: 2024/10/11 16:40:52 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if (c >= '0' && c <= '9')
-	{
-		return (0);
-	}
-	return (1);
+	char	*substr;
+
+	if (s == 0)
+		return (NULL);
+	substr = ft_calloc(len + 1, sizeof(char));
+	if (substr == 0)
+		return (NULL);
+	ft_strlcpy(substr, (char *)s + start, len);
+	return (substr);
 }
 
-/*#include <stdio.h>
-int main(void)
+/*int main(void)
 {
-	printf("%d", ft_isdigit('d'));
+	char const *s = "Home la como esto";
+	unsigned int start = 2;
+	size_t len = 11;
+	char *result = ft_substr(s, start, len);
+
+	printf("substr: %s", result);
+	return 0;
 }*/

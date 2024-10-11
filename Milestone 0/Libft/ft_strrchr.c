@@ -6,22 +6,24 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 13:06:14 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/10/04 13:12:24 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/10/07 17:56:37 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
 	char	*last_occurrence;
 
-	last_occurrence = NULL; // To store the address of the last occurrence of c
+	last_occurrence = NULL;
 	i = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
 		{
-			last_occurrence = (char *)&s[i];// Keep updating the pointer
+			last_occurrence = (char *)&s[i];
 		}
 		i++;
 	}
@@ -31,3 +33,17 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (last_occurrence);
 }
+
+/*int main(void)
+{
+	const char *s = "Hola Mundano";
+	int c = 'z';
+	char *result = ft_strrchr(s, c);
+
+	if (result != NULL)
+		write (1, result, 1);
+	else 
+		write(1, "Not Found\n", 10);
+	return (0);
+}
+*/

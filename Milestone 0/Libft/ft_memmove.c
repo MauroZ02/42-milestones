@@ -6,13 +6,13 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 19:20:23 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/09/25 22:04:31 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/10/11 16:39:28 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	*ft_non_overlapping(char *dest, const char *src, size_t n)
+static void	*ft_non_overlapping(char *dest, const char *src, size_t n)
 {
 	size_t	i;
 
@@ -25,7 +25,7 @@ void	*ft_non_overlapping(char *dest, const char *src, size_t n)
 	return (dest);
 }
 
-void	*ft_overlapping(char *dest, const char *src, size_t n)
+static void	*ft_overlapping(char *dest, const char *src, size_t n)
 {
 	size_t	i;
 
@@ -47,17 +47,17 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	cast_src = (char *)src;
 	if (n == 0)
 	{
-		return (dest);
+		return (cast_dest);
 	}
-	if (dest < src)
+	if (cast_dest < cast_src)
 	{
 		return (ft_non_overlapping(dest, src, n));
 	}
-	else if (dest > src)
+	else if (cast_dest > cast_src)
 	{
 		return (ft_overlapping(dest, src, n));
 	}
-	return (dest);
+	return (cast_dest);
 }
 
 /*int main(void)

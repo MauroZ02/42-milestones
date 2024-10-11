@@ -6,11 +6,11 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:18:07 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/10/02 18:28:14 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/10/07 16:47:42 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
