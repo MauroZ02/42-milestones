@@ -6,55 +6,50 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 20:11:44 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/10/11 14:07:37 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/10/15 13:21:59 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	counternum(int n)
+int	ft_sizeint(int n)
 {
-	int	counter;
+	int	cont;
 
-	counter = 0;
-	if (n == 0)
-		counter++;
-	if (n < 0)
+	cont = 1;
+	while ((n / 10) != 0)
 	{
-		n = n * -1;
-		counter++;
-	}
-	while (n > 0)
-	{
+		cont++;
 		n = n / 10;
-		counter++;
 	}
-	return (counter);
+	return (cont);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*itoa;
-	int		aux;
-	int		nb;
+	char			*str_num;
+	size_t			size_n;
+	unsigned int	num;
 
-	nb = n;
-	aux = counternum(n);
-	itoa = ft_calloc(aux + 1, sizeof(char));
-	itoa[aux--] = '\0';
-	if (nb < 0)
+	num = n;
+	size_n = ft_sizeint(n);
+	if (n < 0)
 	{
-		nb = nb * -1;
-		itoa[0] = '-';
+		num *= -1;
+		size_n++;
 	}
-	if (!nb)
-		itoa[0] = '\0';
-	while (nb > 0)
+	str_num = ft_calloc(size_n + 1, sizeof(char));
+	if (!str_num)
+		return (NULL);
+	str_num[size_n] = '\0';
+	while (size_n--)
 	{
-		itoa[aux--] = (nb % 10) + '0';
-		nb = nb / 10;
+		str_num[size_n] = (num % 10) + '0';
+		num /= 10;
 	}
-	return (itoa);
+	if (n < 0)
+		str_num[0] = '-';
+	return (str_num);
 }
 
 /*int main()

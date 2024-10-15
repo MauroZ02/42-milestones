@@ -6,7 +6,7 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:21:51 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/10/11 14:14:54 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/10/15 12:34:34 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	words = ft_countwords((char *)s, c);
 	split = ft_calloc(words + 1, sizeof(char *));
+	if (!split)
+		return (NULL);
 	i = 0;
 	j = 0;
 	while (words-- != 0)

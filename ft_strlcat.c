@@ -6,7 +6,7 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 15:39:31 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/10/07 16:47:25 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/10/15 12:46:17 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,19 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	len_src;
 	size_t	i;
 
-	len_dst = 0;
-	len_src = 0;
-	if (size == 0)
-		return (len_src);
-	while (dst[len_dst] != '\0' && len_dst < size)
-		len_dst++;
-	while (src[len_src] != '\0')
-		len_src++;
-	if (len_dst < size)
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen(src);
+	if (size <= len_dst)
+		return (size + len_src);
+	i = 0;
+	while (src[i] != '\0' && size > (len_dst + 1))
 	{
-		i = 0;
-		while (i < (size - len_dst - 1) && src[i] != '\0')
-		{
-			dst[len_dst + i] = src[i];
-			i++;
-		}
-		dst[len_dst + i] = '\0';
+		dst[len_dst] = src[i];
+		i++;
+		len_dst++;
 	}
-	return (len_dst + len_src);
+	dst[len_dst] = '\0';
+	return (len_dst + ft_strlen(&src[i]));
 }
 
 /*int main(void)
