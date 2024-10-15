@@ -6,7 +6,7 @@
 #    By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/11 16:44:24 by mzangaro          #+#    #+#              #
-#    Updated: 2024/10/15 12:58:11 by mzangaro         ###   ########.fr        #
+#    Updated: 2024/10/15 14:11:54 by mzangaro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,25 +26,16 @@ ft_strjoin.c ft_strtrim.c ft_strmapi.c ft_itoa.c ft_split.c
 OBJ = $(SRC:.c=.o)
 INCLUDE = libft.h
 
-#BONUSSRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c\
-ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c\
-ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c\
-
-#BONUSOBJ = $(BONUSSRC:.c=.o)
-
 all: $(NAME)
 
 $(NAME): $(OBJ) $(INCLUDE)
 	$(LIB) $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(BONUSOBJ) $(INCLUDE)
-	$(LIB) $(NAME) $(BONUSOBJ) $(OBJ)
-
 %.o: %.c
 	$(CC) $(CCFLAGS) -c -o $@ $<
 
 clean:
-	$(RM) $(OBJ) $(BONUSOBJ)
+	$(RM) $(OBJ)
 
 fclean: clean
 	$(RM) $(NAME)

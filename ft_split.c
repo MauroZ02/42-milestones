@@ -6,7 +6,7 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:21:51 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/10/15 12:34:34 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:34:20 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,26 @@ int	ft_count_letters(char const *s, char c, int j)
 	return (i);
 }
 
+char	**free_split(char	**split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i] != NULL)
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
 	char	**split;
 	int		words;
 	int		j;
-	int		k;
 
 	if (!s)
 		return (NULL);
@@ -65,12 +78,11 @@ char	**ft_split(char const *s, char c)
 	{
 		while (s[j] && s[j] == c)
 			j++;
-		split[i] = ft_calloc(ft_count_letters(s, c, j) + 1, sizeof(char));
-		k = 0;
+		split[i] = ft_substr(s, j, ft_count_letters(s, c, j));
+		if (!split[i])
+			return (free_split(split));
 		while (s[j] && s[j] != c)
-		{
-			split[i][k++] = s[j++];
-		}
+			j++;
 		i++;
 	}
 	return (split);
